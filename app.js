@@ -1,21 +1,19 @@
-let display = document.getElementsByClassName('display');
+let input = document.querySelector('input');
 let button = Array.from(document.querySelectorAll('button'));
 
 button.map((button)=>{
     button.addEventListener('click', (event)=>{
-        display.innerText += event.target.innerText;
+        input.value += event.target.innerText;
         let key = event.target.innerText;
-        if(key == '1' || key == '2' || key == '3' || key == '4' || key == '5' || key == '6' || key == '7' || key == '8' || key == '9' || key == '0'){
-            display.innerText += key;
-        }
+        
         if(key == 'C'){
-            display.innerText = '';
+            input.value = '';
         }
         if(key == '='){
-            display.innerText = eval(input.value); 
+            input,value = eval(input.value); 
         }
         if(key == 'DEL'){
-            display.innerText = display.innerText.slice(0, -1);
+            input.value = input.value.slice(0, -1);
         }
     })
 })
